@@ -13,18 +13,9 @@ while x != "0 0 0 0 0":
     pos = x.split()
 
     S,x,y,dx,dy= int(pos[0]), int(pos[1]), int(pos[2]), int(pos[3]), int(pos[4])
-    #flea on a border
 
 
-    #maxtries = max(S//(S-S%dx),S //(S-S%dy))
-    try: maxtries = max(S//(dx%S), S//(dy%S))
-    except: 
-        if dx%S == dy%S == 0:
-            maxtries = 1
-        elif dx%S == 0:
-                maxtries = S//(dy%S)
-        elif dy%S == 0:
-            maxtries = S//(dx%S)
+    maxtries = 10000
     step = 0
     while maxtries != 0:
         if not isblack(x,y,S):
@@ -42,4 +33,4 @@ while x != "0 0 0 0 0":
             
         
         
-
+        
