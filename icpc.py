@@ -7,13 +7,9 @@ oldrow = []
 testmatrix =[[1 for i in range(rows-1)] for k in range(columns-1)]
 for i in range(rows):
     newrow = list(input())
-    print("Iteration number" + str(i))
-    print("Old row: " + str(oldrow))
-    print("New row: " + str(newrow))
     if oldrow:
         for k in range(1,columns-1):
             item = newrow[k]
-            print(item)
             if item == 0:
                 continue
             elif item == "?":
@@ -38,6 +34,14 @@ for i in range(rows):
     
 
     oldrow = newrow
+counter = 0
+for k in testmatrix:
+    for i in k:
+        if i == 1:
+            counter +=1
+
+fields = rows*columns
 
 
-print(testmatrix)
+result = counter*(3**(fields-4)) - (2**counter - counter -1)
+print(result)
